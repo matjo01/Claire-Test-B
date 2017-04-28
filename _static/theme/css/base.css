@@ -15,6 +15,15 @@ body {
   overflow: auto;
 }
 
+a.navbar-brand {
+  padding-left: 64px;
+  background-image: url("../img/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 12px center;
+}
+
+
 a.navbar-brand:hover {
   background-color: #93c951 !important;
 }
