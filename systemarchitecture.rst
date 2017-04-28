@@ -43,9 +43,6 @@ Capability Registry
 Application Config
  This is a project to store application configuration centrally so when we move to a clustered environment for example, there is no requirement on the user to change configuration data in multiple places.
 
-#Icon
-#I'm not sure if this belongs in the diagram currently as it has not yet progressed beyond the POC stage AFAIK.
-
 System Definition
  System Definition Service allows the platform to store, retrieve and query systems (blocks) and components contained in systems.
 
