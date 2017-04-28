@@ -10,7 +10,7 @@
       </button>
       <a class="navbar-brand" href="{{ pathto(master_doc) }}">
      {%- block sidebarlogo %}
-        {%- if logo %}<img src="../_static/theme/img/logo.png}">{%- endif %}
+        {%- if logo %}<img src="../_static/theme/img/logo.png}" href="../_static/theme/img/emccode-logo.png">{%- endif %}
         {%- endblock %}
         {% if theme_navbar_title -%}{{ theme_navbar_title|e }}{%- else -%}{{ project|e }}{%- endif -%}
       </a>
@@ -48,6 +48,7 @@
         {% block navbarsearch %}{% include "navbarsearchbox.html" %}{% endblock %}
 
         <ul class="nav navbar-nav navbar-right" style="background-color: #007DB8;">
+          <link rel="stylesheet" href="../_static/theme/img/emccode-logo.png">
 
           {% include "relations.html" %}
           <li>
@@ -58,7 +59,7 @@
           </li>
           <li>
               <a href="http://codedellemc.com">
-                <img src ="fa fa-icon-emccode-logo;"></i>
+                <img src ="fa emccode-logo;"></i>
                 <span>{code} by Dell EMC </span>
               </a>
           </li>
