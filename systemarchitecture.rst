@@ -1,11 +1,6 @@
 System Architecture
 ===================
 
-#.. image:: architecture-diagram.png
-#   :height: 700
-#   :width: 800
-#   :align:
-
 The architecture above consists of 5 key sections:
 
 AMQP Service Bus
