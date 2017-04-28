@@ -15,6 +15,10 @@ body {
   overflow: auto;
 }
 
+a.navbar-brand:hover {
+  background-color: #008cba !important;
+}
+
 a img.align-left {
   margin-right: 2em;
   margin-bottom: 1em;
