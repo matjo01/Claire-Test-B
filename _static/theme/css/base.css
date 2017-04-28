@@ -15,12 +15,8 @@ body {
   overflow: auto;
 }
 
-a.navbar-brand{
-  background-image: url(Symphony Icon white.png);
-}
-
 a.navbar-brand:hover {
-  background-color: black !important;
+  background-color: #008FC5;
 }
 
 a img.align-left {
