@@ -1,7 +1,7 @@
 System Architecture
 ===================
 
-The architecture above consists of 5 key sections:
+The architecture consists of five key sections:
 
 AMQP Service Bus
 ----------------
@@ -55,5 +55,3 @@ Field Replacement Unit (FRU) PAQX
 
 Dell Node Expansion PAQX
  This PAQX will automate the process of deploying a new node that has been bolted into the cabinet of an already operating VxRack system. In some respects, it is the 2nd half of the field replacement PAQX but it uses new identifiers and adds resources to the system, rather than simply replacing existing resources
-
-
