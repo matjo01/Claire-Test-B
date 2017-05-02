@@ -8,9 +8,9 @@ AMQP Service Bus
 
 This is the mechanism through which all the individual components in project Symphony communicate. It is an instance of RabbitMQ, an open source implementation of an AMQP bus, and is distributed by Pivotal under the Mozilla Public License.
 
-Symphony Hal Layer & Hal Integration
-------------------------------------
-Project Symphony is using those two projects to provide a hardware abstraction layer between Project Symphony and the element managers for the components inside a VxRack System
+Symphony HAL Layer and HAL Integration
+-------------------------------------------------------------------
+Project Symphony is using those two projects to provide a hardware abstraction layer (HAL) between Project Symphony and the element managers for the components inside a VxRack System.
 
 Portable, Autonomous Query Execution (PAQX) Connectors
 ------------------------------------------------------
@@ -34,9 +34,6 @@ Endpoint Registry
 
 Capability Registry
  Provides the ability to register and lookup new business capabilities dynamically. The Capability Registry becomes the repository of functionality that the system can provide e.g. Install ESXi etc..
-
-Application Config
- This is a project to store application configuration centrally so when we move to a clustered environment for example, there is no requirement on the user to change configuration data in multiple places.
 
 System Definition
  System Definition Service allows the platform to store, retrieve and query systems (blocks) and components contained in systems.
