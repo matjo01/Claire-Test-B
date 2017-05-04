@@ -1,4 +1,4 @@
-System Architecture
+System architecture
 ===================
 
 The architecture consists of five key sections:
@@ -6,11 +6,11 @@ The architecture consists of five key sections:
 AMQP Service Bus
 ----------------
 
-This is the mechanism through which all the individual components in project Symphony communicate. It is an instance of RabbitMQ, an open source implementation of an AMQP bus, and is distributed by Pivotal under the Mozilla Public License.
+This is the mechanism through which all the individual components in Symphony communicate. It is an instance of RabbitMQ, an open source implementation of an AMQP bus, and is distributed by Pivotal under the Mozilla Public License.
 
 Symphony HAL Layer and HAL Integration
 -------------------------------------------------------------------
-Project Symphony is using those two projects to provide a hardware abstraction layer (HAL) between Project Symphony and the element managers for the components inside a VxRack System.
+Project Symphony is using those two projects to provide a hardware abstraction layer (HAL) between Symphony and the element managers for the components inside a VxRack System.
 
 Portable, Autonomous Query Execution (PAQX) Connectors
 ------------------------------------------------------
