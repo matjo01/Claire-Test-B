@@ -1,14 +1,18 @@
 Contributing to Symphony
 ========================
 
-Welcome to Project Symphony. While you can access our source code for a project, service, or application, we hope you’ll consider contributing back to the code base with improvements, new features, and fixes.
+While you can access our source code for a project, service, or application, we hope you’ll consider contributing back to the code base with improvements, new features, and fixes.
 
-Why contribute? Providing feedback allows others to further enhance your code. If others give back, you can take advantage of their contributions. We include contributed improvements in our automated test environment in subsequent releases. If you don't give back your improvements, you'll need to retest your changes every time you deploy a new version of Symphony.
+Why contribute? Providing feedback allows others to further enhance your code. If others give back, you can take advantage of their contributions. We include contributed improvements in our automated test environment in subsequent releases. If you don't give back your improvements, you'll need to retest your changes every time you deploy a new version of dellemc-symphony.
+
+Contributor agreement
+---------------------
+All contributions are made under the Developer Certificate of Origin (DCO).
 
 Submitting contributions
 ------------------------
 
-Project Symphony takes contributions through GitHub pull requests. To submit coding additions or changes for a repository, fork the repository and clone it locally. Then use a unique branch to make commits and send pull requests.
+Symphony takes contributions through GitHub pull requests. To submit coding additions or changes for a repository, fork the repository and clone it locally. Then use a unique branch to make commits and send pull requests.
 
 Limit a pull request to a single issue. Make sure to provide a clear and complete description of the pull request.
 
@@ -86,8 +90,10 @@ For more detailed information about how we’ve set up our code, see our :doc:`S
 Community guidelines
 --------------------
 
-This project adheres to the `Code of Conduct
+Symphony adheres to the `Code of Conduct
 <https://github.com/codedellemc/community/blob/master/code-of-conduct.md>`_ as detailed by {code} by Dell EMC community.
+
+We also follow the DevHigh5 program and guidelines.
 
 Communicating with other users
 ------------------------------
