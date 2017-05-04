@@ -8,16 +8,16 @@ AMQP Service Bus
 
 This is the mechanism through which all the individual components in Symphony communicate. It is an instance of RabbitMQ, an open source implementation of an AMQP bus, and is distributed by Pivotal under the Mozilla Public License.
 
-Symphony HAL Layer and HAL Integration
+Symphony HAL and HAL Integration
 -------------------------------------------------------------------
-Project Symphony is using those two projects to provide a hardware abstraction layer (HAL) between Symphony and the element managers for the components inside a VxRack System.
+Symphony is using those two projects to provide a hardware abstraction layer (HAL) between Symphony and the element managers for the components inside a VxRack System.
 
-Portable, Autonomous Query Execution (PAQX) Connectors
+PAQX connectors
 ------------------------------------------------------
 
-Defines a business capability that is available through QEXE, an example of which is Inventory Management allowing queries such as "find storage arrays" or "find disks contained by storage array 'X123456'".  PAQX contracts are defined in a language-agnostic manner and should be implementable by 3rd Party companies without dependency on the VCE Software Engineering teams.   A PAQX can subscribe to events from other PAQX or from the VCE Infrastructure.
+Portable Autonomous Query Execution (PAQX) connectors define a business capability available through QEXE, an example of which is Inventory Management allowing queries such as "find storage arrays" or "find disks contained by storage array 'X123456'".  PAQX contracts are defined in a language-agnostic manner and should be implementable by third party companies without dependency on the Dell EMC software engineering teams. A PAQX can subscribe to events from other PAQX or from the VCE Infrastructure.
 
-Core Services
+Core services
 --------------
 Such as credentials for the element managers and operators, the definition files that are used to describe the components in a VxRack System, a registry, so that additional PAQX can be deployed and consumed without restarting a running Symphony instance, and a persistence layer.
 
@@ -26,7 +26,7 @@ Core Services API Gateway
 API gateway is an implementation of a framework (Zuul + Consul.io) that acts as a single entry point for all clients. The API gateway handles requests in one of two ways. Some requests are simply proxied/routed to the appropriate service. It handles other requests by fanning out to multiple services.
 
 
-Core Services Breakdown
+Core Services breakdown
 -----------------------
 
 Endpoint Registry
