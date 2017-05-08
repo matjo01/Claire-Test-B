@@ -21,11 +21,17 @@ a.navbar-brand:hover {
 
 a.navbar-brand {
   text-align: right;
-  padding-left: 0px;
+  padding-left: 0;
+  margin: 0;
   background-image: url("Symphony-Icon-Color-200x200.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 12px center;
+}
+
+.navbar-brand img
+{
+    max-height: 100%;
 }
 
 .navbar-text {
