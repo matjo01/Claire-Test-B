@@ -19,7 +19,7 @@ body {
 .navbar-nav>li>a:before {
     background-repeat: no-repeat;
     background-position: 0 top;
-    content: "";
+    content: "../img/logo.png";
     display: inline-block;
     height: 29px;
     margin-right: 10px;
