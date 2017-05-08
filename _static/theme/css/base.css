@@ -21,7 +21,7 @@ a.navbar-brand:hover {
 
 a.navbar-brand {
   text-align: right;
-  padding-left: 64px;
+  padding-left: 0px;
   background-image: url("Symphony-Icon-Color-200x200.jpg");
   background-size: contain;
   background-repeat: no-repeat;
