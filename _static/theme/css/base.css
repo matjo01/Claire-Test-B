@@ -19,6 +19,14 @@ a.navbar-brand:hover {
   background-color: #00526e;
 }
 
+a.navbar-brand {
+  padding-left: 64px;
+  background-image: url("Symphony-Icon-Color-200x200.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 12px center;
+}
+
 a img.align-left {
   margin-right: 2em;
   margin-bottom: 1em;
