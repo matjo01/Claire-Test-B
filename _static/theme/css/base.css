@@ -15,16 +15,12 @@ body {
   overflow: auto;
 }
 
-.navbar-default .navbar-nav>.active>a:before,
-.navbar-nav>li>a:before {
+a.navbar-brand {
+    padding-left: 64px;
+    background-image: url(../img/logo.png);
+    background-size: contain;
     background-repeat: no-repeat;
-    background-position: 0 top;
-    content: "../img/logo.png";
-    display: inline-block;
-    height: 29px;
-    margin-right: 10px;
-    vertical-align: middle;
-    width: 29px;
+    background-position: 12px center;
 }
 
 a.navbar-brand:hover {
