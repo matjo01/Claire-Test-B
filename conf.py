@@ -21,7 +21,6 @@
 import sys
 import os
 import sphinx_bootstrap_theme
-# sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('_ext'))
 
 # -- General configuration ------------------------------------------------
@@ -48,7 +47,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'dellemc project-symphony'
+project = 'dellemc-symphony'
 copyright = '2017, Dell EMC'
 author = 'Dell EMC'
 # The version info for the project you're documenting, acts as replacement for
@@ -92,7 +91,7 @@ html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 # documentation.
 html_theme_options = {
     # Navigation bar title. (Default: ``project`` value)
-    'navbar_title': "Project Symphony",
+    'navbar_title': "dellemc-symphony",
 
     # Tab name for entire site. (Default: "Site")
     'navbar_site_name': "Documentation",
