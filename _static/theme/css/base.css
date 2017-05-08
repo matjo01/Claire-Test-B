@@ -27,6 +27,15 @@ a.navbar-brand {
   background-position: 12px center;
 }
 
+.navbar-text {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: left;
+    margin: auto;
+    padding-top: 10px;
+}
+
 a img.align-left {
   margin-right: 2em;
   margin-bottom: 1em;
