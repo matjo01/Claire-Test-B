@@ -15,6 +15,18 @@ body {
   overflow: auto;
 }
 
+.navbar-default .navbar-nav>.active>a:before,
+.navbar-nav>li>a:before {
+    background-repeat: no-repeat;
+    background-position: 0 top;
+    content: "";
+    display: inline-block;
+    height: 29px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 29px;
+}
+
 a.navbar-brand:hover {
   background-color: #00526e;
 }
