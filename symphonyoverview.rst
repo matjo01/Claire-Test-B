@@ -1,4 +1,3 @@
-Symphony Overview - **PLACEHOLDER**
-===================================
+Symphony Overview
+=================
 
-test
