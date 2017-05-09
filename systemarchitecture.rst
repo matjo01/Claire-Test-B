@@ -45,7 +45,7 @@ System definition
  Allows storage, retrieval and querying of Converged Systems and system components.
 
 Credentials
- Credential service is a secure repository of component and endpoint credentials.  .. When HAL or PAQX request component credentials, the credentials are supplied in an encrypted format.
+ Credential service is a secure repository of component and endpoint credentials. When HAL or PAQX request component credentials, the credentials are supplied in an encrypted format.
 
 Element identity
  Identity service maps components between Project Symphony identifiers and third-party party identifiers such as CoprHD ViPR ID. This mapping allows correlation of components between PAQX.
