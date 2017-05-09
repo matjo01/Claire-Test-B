@@ -1,3 +1,3 @@
-Symphony Overview
+Symphony overview
 =================
 
