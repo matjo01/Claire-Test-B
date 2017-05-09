@@ -1,10 +1,10 @@
 System architecture
 ===================
 
-#.. image:: architecture-diagram.png
-#   :height: 700
-#   :width: 800
-#   :align: center
+.. image:: architecture-diagram.png
+   :height: 700
+   :width: 800
+   :align: center
 
 The architecture above consists of five key sections:
 
@@ -51,7 +51,7 @@ Element identity
  Identity service maps components between Project Symphony identifiers and third-party party identifiers such as CoprHD ViPR ID. This mapping allows correlation of components between PAQX.
 
 PAQX 
-----
+-------
 
 Defines a business capability that is available  through the API Gateway,for example assessing a Converged System against an RCM matrix. A PAQX is not required to have a public REST API. PAQX contracts are defined in a language-agnostic manner, as JSON schemas (http://json-schema.org/) and should be implementable by third-party developers without dependency on the Dell EMC software engineering teams. A PAQX can subscribe to events from other PAQX.
 
