@@ -1,54 +1,68 @@
 System architecture
 ===================
 
-The architecture consists of five key sections:
+#.. image:: architecture-diagram.png
+#   :height: 700
+#   :width: 800
+#   :align: center
 
-AMQP Service Bus
-----------------
+The architecture above consists of five key sections:
 
-This is the mechanism through which all the individual components in Symphony communicate. It is an instance of RabbitMQ, an open source implementation of an AMQP bus, and is distributed by Pivotal under the Mozilla Public License.
+1. Service Bus AMQP
 
-Symphony HAL and HAL Integration
--------------------------------------------------------------------
-Symphony is using those two projects to provide a hardware abstraction layer (HAL) between Symphony and the element managers for the components inside a VxRack System.
+This is the mechanism through which all the individual components in Dell Project Symphony communicate. It is an instance of RabbitMQ, an open source implementation of an AMQP  message broker, and is distributed by Pivotal under the Mozilla Public License.
 
-PAQX connectors
-------------------------------------------------------
+2. Symphony HAL and HAL Integration
 
-Portable Autonomous Query Execution (PAQX) connectors define a business capability available through QEXE, an example of which is Inventory Management allowing queries such as "find storage arrays" or "find disks contained by storage array 'X123456'".  PAQX contracts are defined in a language-agnostic manner and should be implementable by third party companies without dependency on the Dell EMC software engineering teams. A PAQX can subscribe to events from other PAQX or from the VCE Infrastructure.
+These provide a hardware abstraction layer between Project Symphony and the element managers for the components inside a Dell EMC Converged System.
 
-Core services
---------------
-Such as credentials for the element managers and operators, the definition files that are used to describe the components in a VxRack System, a registry, so that additional PAQX can be deployed and consumed without restarting a running Symphony instance, and a persistence layer.
+3. Portable, Autonomous Query Execution (PAQX) 
 
-Core Services API Gateway
--------------------------
-API gateway is an implementation of a framework (Zuul + Consul.io) that acts as a single entry point for all clients. The API gateway handles requests in one of two ways. Some requests are simply proxied/routed to the appropriate service. It handles other requests by fanning out to multiple services.
+Project Symphony needs a common way to ensure each feature is installed correctly. It uses a concept called PAQX to allow the installation of features in a common, repeatable way. By extracting a common installation framework, PAQX developers define aspects of their PAQX in a portable definition language and the PAQX framework uses this information to perform the installation tasks required. The PAQX developer can focus on implementing a feature instead of the installation process.
 
+4. Core Services
 
-Core Services breakdown
+Includes credentials for the element managers and components and the configuration used to describe the components in a Converged System.  Also includes a registry of business capabilties so that additional PAQX can be deployed and consumed without restarting., 
+
+5. Core Services API Gateway
+
+API gateway is used for REST-based communication implementing Zuul + Consul.ioto act as a single entry point for all clients. The API gateway handles requests in one of two ways:
+
+* Proxying/routing to the appropriate service.
+
+* Orchestrating requests to the required services.
+
+Core services breakdown
 -----------------------
 
-Endpoint Registry
- Provides the ability to register new endpoints for software that can provide functionality and/or data to the system. The Endpoint Registry becomes the repository of applications that the system can leverage e.g. RackHD, CoprHD, vCenter
+Endpoint registry
+ The endpoint registry provides the ability to register new endpoints for software that can provide core functionality and/or data to the system. The endpoint registry is the repository of applications that the Converged system can leverage, for example, RackHD, CoprHD, vCenter
 
-Capability Registry
- Provides the ability to register and lookup new business capabilities dynamically. The Capability Registry becomes the repository of functionality that the system can provide e.g. Install ESXi etc..
+Capability registry
+ Provides the ability to dynamically register and look up new business capabilities. The capability registry is the repository of functionality that the Converged System can provide, for example, Install ESXi..
 
-System Definition
- System Definition Service allows the platform to store, retrieve and query systems (blocks) and components contained in systems.
+System definition
+ Allows storage, retrieval and querying of Converged Systems and system components.
 
 Credentials
- Credential Service stores the component credentials that it receives from the System Definition Service (SDS). The credential service then persists the component credentials in the database. When the HAL Orchestration Service (HOS) requests for the component credentials, it then supplies the credentials. At all times, the credentials are in an encrypted format.
+ Credential service is a secure repository of component and endpoint credentials.  .. When HAL or PAQX request component credentials, the credentials are supplied in an encrypted format.
 
-Element Identity
- Identity Service provides the capability of storing and retrieving elements managed via  HAL provided by UUIDs
+Element identity
+ Identity service maps components between Project Symphony identifiers and third-party party identifiers such as CoprHD ViPR ID. This mapping allows correlation of components between PAQX.
 
-PAQX
- Symphony needs a common way to ensure each feature is installed correctly. Symphony utilizes a concept called PAQX to allow the installation of features in a common, repeatable way. By extracting a common installation framework, PAQX authors will not need to worry about the integrations into the rest of Symphony. Instead, PAQX authors will define aspects of their PAQX in a portable definition language and the PAQX framework will utilize this information to perform the installation tasks for the PAQX. The PAQX author can focus on implementing their feature instead of the installation within Symphony.
+PAQX 
+----
+
+Defines a business capability that is available  through the API Gateway,for example assessing a Converged System against an RCM matrix. A PAQX is not required to have a public REST API. PAQX contracts are defined in a language-agnostic manner, as JSON schemas (http://json-schema.org/) and should be implementable by third-party developers without dependency on the Dell EMC software engineering teams. A PAQX can subscribe to events from other PAQX.
 
 Field Replacement Unit (FRU) PAQX
- This PAQX automates the process of replacing a node (server with disks bolted into a cabinet) in an operating VxRack System. It sounds simple, but the documentation for the current manual process runs to about 240 pages. The implantation in Project Symphony will be a faithful automation, using existing workflow tools, of the document. It will implement industry standard approaches to vacating existing virtual machines that may be running on the node., eliminating the node from any storage environment and then reversing the process with the replacement node, re-using existing identifiers such as IP Addresses.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Dell Node Expansion PAQX
- This PAQX will automate the process of deploying a new node that has been bolted into the cabinet of an already operating VxRack system. In some respects, it is the 2nd half of the field replacement PAQX but it uses new identifiers and adds resources to the system, rather than simply replacing existing resources
+This PAQX automates the process of replacing a node (server with integrated storage mounted into a cabinet) in an operating Dell EMC VxRack FLEX System.. It  uses industry standard approaches to vacate existing virtual machines that might be running on the node, eliminating the node from any storage environment, and then replicating the configuration onto the replacement node, re-using existing identifiers such as IP addresses.
+
+Dell Node Expansion PAQX 
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+This PAQX automates the process of deploying a new node that has been racked into the cabinet of an already operating VxRack FLEX System.  It automates the expansion of the system and its available resources. 
+
+
