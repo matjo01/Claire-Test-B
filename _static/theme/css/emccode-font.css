@@ -21,7 +21,7 @@
 }
 
 .icon-emccode-logo:before {
-    content: "e";
+    content: "";
     vertical-align: middle;
 }
 
