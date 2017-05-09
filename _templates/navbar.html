@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="../_static/theme/img/emccode-logo-mono-48x48.png">
 <div id="navbar" class="{{ theme_navbar_class }} navbar-default {% if theme_navbar_fixed_top|tobool -%} navbar-fixed-top{%- endif -%}" style="background-color: #007DB8;">
   <div class="container">
     <div class="navbar-header" style="background-color: #007DB8;">
@@ -15,53 +14,52 @@
         {%- endblock %}
         {% if theme_navbar_title -%}{{ theme_navbar_title|e }}{%- else -%}{{ project|e }}{%- endif -%}
       </a>
-      <span class="navbar-text navbar-version pull-left"><b>{{ version|e }}</b></span>
-
+      <!--<span class="navbar-text navbar-version pull-left"><b>{{ version|e }}</b></span>-->
       </div>
-      <div class="collapse navbar-collapse nav-collapse" style="background-color: #007DB8;">
-        <ul class="nav navbar-nav" >
-          {% if theme_navbar_links %}
-            {%- for link in theme_navbar_links %}
-              <li><a href="{{ pathto(*link[1:]) }}">{{ link[0] }}</a></li>
-            {%- endfor %}
-          {% endif %}
+    
+<div class="collapse navbar-collapse nav-collapse" style="background-color: #007DB8;">
+  <ul class="nav navbar-nav" >
+    {% if theme_navbar_links %}
+    {%- for link in theme_navbar_links %}
+    <li><a href="{{ pathto(*link[1:]) }}">{{ link[0] }}</a></li>
+    {%- endfor %}
+    {% endif %}
 
-          {% block navbartoc %}
-            {% include "globaltoc.html" %}
-            {% if theme_navbar_pagenav %}
-              {% include "navbartoc.html" %}
-            {% endif %}
-          {% endblock %}
+    {% block navbartoc %}
+      {% include "globaltoc.html" %}
+      {% if theme_navbar_pagenav %}
+        {% include "navbartoc.html" %}
+      {% endif %}
+    {% endblock %}
 
-          {% if theme_navbar_sidebarrel %}
-            {% block sidebarrel %}
-              {% include "relations.html" %}
-            {% endblock %}
-          {% endif %}
+    {% if theme_navbar_sidebarrel %}
+      {% block sidebarrel %}
+        {% include "relations.html" %}
+      {% endblock %}
+    {% endif %}
 
-          {% block navbarextra %}{% endblock %}
+    {% block navbarextra %}{% endblock %}
 
-          {% if theme_source_link_position == "nav" %}
-            <li class="hidden-sm">{% include "sourcelink.html" %}</li>
-          {% endif %}
-        </ul>
+    {% if theme_source_link_position == "nav" %}
+    <li class="hidden-sm">{% include "sourcelink.html" %}</li>
+    {% endif %}
+  </ul>
+    {% block navbarsearch %}{% include "navbarsearchbox.html" %}{% endblock %}
 
-        {% block navbarsearch %}{% include "navbarsearchbox.html" %}{% endblock %}
-
-        <ul class="nav navbar-nav navbar-right" style="background-color: #007DB8;">
-           {% include "relations.html" %}
-          <li>
-              <a href="https://github.com/dellemc-symphony/documentation">
-                  <i class="fa fa-github"></i>
-                  <span>GitHub</span>
-              </a>
-          </li>
-          <li>
-              <a href="http://codedellemc.com">
-              <i class="fa icon-emccode-logo"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+  <ul class="nav navbar-nav navbar-right" style="background-color: #007DB8;">
+    {% include "relations.html" %}
+    <li>
+        <a href="https://github.com/dellemc-symphony/documentation">
+            <i class="fa fa-github"></i>
+            <span>GitHub</span>
+        </a>
+    </li>
+    <li>
+        <a href="http://codedellemc.com">
+        <i class="fa icon-emccode-logo"></i>
+      </a>
+    </li>
+  </ul>
+  </div>
   </div>
 </div>
