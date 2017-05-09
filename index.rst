@@ -7,7 +7,7 @@
    :height: 300
    :align: left
 
-Project symphony
+Dell EMC Project Symphony
 ============================================
 
 
@@ -20,7 +20,6 @@ The Project-symphony documentation is hosted `here
 .. toctree::
    :maxdepth: 1
 
-   symphonyoverview
    systemarchitecture
    contributingtosymphony
    symphonydevelopmentguide
