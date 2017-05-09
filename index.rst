@@ -20,6 +20,8 @@ The Project-symphony documentation is hosted `here
 .. toctree::
    :maxdepth: 1
 
-   systemarchitecture
-   contributingtosymphony
-   symphonydevelopmentguide
+   * systemarchitecture
+   
+   * contributingtosymphony
+   
+   * symphonydevelopmentguide
